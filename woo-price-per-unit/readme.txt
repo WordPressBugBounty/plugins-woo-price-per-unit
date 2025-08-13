@@ -1,14 +1,13 @@
-=== WooCommerce Price Per Unit ===
+=== Price Per Unit for WooCommerce ===
 Contributors: mechuram 
 Tags: woocommerce, price, weight, price customization, unit price
-Stable tag: 2.2.4
-Requires PHP: 7.0
-Tested up to: 6.5.3
+Stable tag: 2.2.6
+Requires PHP: 7.2
+Tested up to: 6.8
 Requires at least: 4.4
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
-
-WooCommerce Price Per Unit allows the user to show prices recalculated per units(weight) and do some other customization to the appearance of prices
+Price Per Unit for WooCommerce allows the user to show prices recalculated per units(weight) and do some more customization to the look of the prices
 
 == Description ==
 This is an extension for WooCommerce which will help you to sell products where can be important for the customer to know how much a weight unit costs.
@@ -94,8 +93,8 @@ Plug-in is compatible with WooCommerce versions from 3.0.0 to 4.0.x
 == Installation ==
 
 1. Install and activate the plug-in in your WordPress dashboard by going to Plug-ins -> Add New.
-2. Search for "WooCommerce Price Per Unit" to find the plug-in.
-3. When you see WooCommerce Price Per Unit, click "Install Now" to install the plug-in.
+2. Search for "Price Per Unit for WooCommerce" to find the plug-in.
+3. When you see Price Per Unit for WooCommerce, click "Install Now" to install the plug-in.
 4. Click "Activate" to activate the plug-in.
 
 
@@ -126,6 +125,9 @@ No. Some features are independent on recalculation, you will find them as "Gener
 6. Store with recalculation set for all products   
 
 == Changelog ==
+
+= 2.2.6 =
+- Bug-fix - Legal changes
 
 = 2.2.4 =
 - New feature - Options on product detail to disable recalculation
@@ -240,6 +242,8 @@ Default setting is to show the text always
 - Initial Release
 
 == Upgrade Notice ==
+= 2.2.6 =
+- Bug-fix - Legal changes
 
 = 2.2.4 =
 - New feature - Options on product detail to disable recalculation

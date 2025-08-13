@@ -1,18 +1,21 @@
 <?php
 /**
- * Plugin Name: WooCommerce Price Per Unit
+ * Plugin Name: Price Per Unit for WooCommerce
  * Plugin URI: https://mechcomp.cz/price-per-unit-pro/
- * Description: WooCommerce Price Per Unit allows the user to show prices recalculated per units(weight) and do some customization to the look of the prices
- * Version: 2.2.4
+ * Description: Price Per Unit for WooCommerce allows the user to show prices recalculated per units(weight) and do some more customization to the look of the prices
+ * Version: 2.2.6
  * Author: Martin Mechura
  * Author URI: http://mechcomp.cz
  * Text Domain: woo-price-per-unit
- * WC tested up to: 8.8.3
+ * WC tested up to: 10.0
+ * Requires PHP: 7.2
+ * Requires at least: 4.4
  * WC requires at least: 3.0
+ * Requires Plugins: woocommerce
  *
  * @package PricePerUnit
  *
- * WooCommerce Price Per Unit. A Plugin that works with the WooCommerce plugin for WordPress.
+ * Price Per Unit for WooCommerce. A Plugin that works with the WooCommerce plugin for WordPress.
  * Copyright (C) 2017 Martin Mechura
  *
  * This program is free software: you can redistribute it and/or modify
@@ -27,12 +30,15 @@
  *
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see https://www.gnu.org/licenses/gpl-3.0.html.
+ * 
+ * License: GPLv3 or later
+ * License URI: https://www.gnu.org/licenses/gpl-3.0.html
  */
 
 if ( ! defined( 'ABSPATH' ) ) :
 	exit; // Exit if accessed directly.
 endif;
-define( 'MCMP_PPU_FREE_PLUGIN_VERSION', '2.2.4' );
+define( 'MCMP_PPU_FREE_PLUGIN_VERSION', '2.2.6' );
 define( 'MCMP_PPU_FREE_PLUGIN_FILE', __FILE__ );
 define( 'MCMP_PPU_FREE_PLUGIN_DIR', plugin_dir_path( MCMP_PPU_FREE_PLUGIN_FILE ) );
 
@@ -587,14 +593,11 @@ class MCMP_PPU {
 	public function render_recalc_text( $product_id_to_inspect, $price_text = '', $row_wrapper = false ) {
 
 		$pre_text = $this->get_option_override( '_mcmp_ppu_recalc_text_prefix', $product_id_to_inspect );
-		// phpcs:ignore WordPress.WP.I18n.NonSingularStringLiteralText
-		$pre_text = empty( $pre_text ) ? '' : esc_html_x( $pre_text, 'Recalculated price prefix text', 'woo-price-per-unit' );
+		$pre_text = empty( $pre_text ) ? '' : esc_html( $pre_text );
 		$suf_text = $this->get_option_override( '_mcmp_ppu_recalc_text', $product_id_to_inspect );
 		$suf_text = ( empty( $suf_text ) || ' ' == $suf_text ) ? '' : $suf_text;
 		if ( '-automatic-' == $suf_text ) {
-			$suf_text = get_option( '_mcmp_ppu_recalc_text_automatic_preposition', '/' );
-			// phpcs:ignore WordPress.WP.I18n.NonSingularStringLiteralText
-			$suf_text         = _x( $suf_text, 'Preposition for weight unit when using automatic text', 'woo-price-per-unit' );
+			$suf_text         = get_option( '_mcmp_ppu_recalc_text_automatic_preposition', '/' );
 			$suf_text         = ! empty( $suf_text ) ? '<span class="mcmp-recalc-price-suffix-preposition">' . esc_html( str_replace( '%', ' ', $suf_text ) ) . '</span>' : '';
 			$recalc_per_units = $this->get_option_override( '_mcmp_ppu_recalc_per_units', $product_id_to_inspect, 1 );
 			if ( 1 != $recalc_per_units ) {
@@ -617,14 +620,10 @@ class MCMP_PPU {
 				case 'lbs':
 					$ratio_unit = esc_html( _nx( 'lb', 'lbs', $recalc_per_units, 'weight unit', 'woo-price-per-unit' ) );
 					break;
-				default:
-					// phpcs:ignore WordPress.WP.I18n.NonSingularStringLiteralText
-					$ratio_unit = esc_html_x( $ratio_unit, 'Custom unit name', 'woo-price-per-unit' );
 			}
 			$suf_text .= $ratio_unit;
 		} elseif ( ! empty( $suf_text ) ) {
-			// phpcs:ignore WordPress.WP.I18n.NonSingularStringLiteralText
-			$suf_text = esc_html_x( $suf_text, 'Recalculated price suffix text', 'woo-price-per-unit' );
+			$suf_text = esc_html( $suf_text );
 		}
 		if ( ! empty( $pre_text ) ) {
 			$separator = '&nbsp;';
@@ -793,8 +792,7 @@ class MCMP_PPU {
 				// fill prefix text for variables.
 				$var_prefix_text = get_option( '_mcmp_ppu_var_prefix_text' );
 				if ( ! empty( $var_prefix_text ) ) {
-					// phpcs:ignore WordPress.WP.I18n.NonSingularStringLiteralText
-					$var_prefix_text = esc_html_x( $var_prefix_text, 'Variations - variable price prefix', 'woo-price-per-unit' );
+					$var_prefix_text = esc_html( $var_prefix_text );
 					$var_prefix_text = '<span class="woocommerce-Price-currencySymbol amount mcmp-variable-price-prefix">' . $var_prefix_text . ' </span>';
 					$price_text      = $var_prefix_text . $price_text;
 				}
@@ -802,8 +800,7 @@ class MCMP_PPU {
 		}
 		$add_text = $this->get_option_override( '_mcmp_ppu_additional_text', $product_id_to_inspect );
 		if ( ! empty( $add_text ) ) {
-			// phpcs:ignore WordPress.WP.I18n.NonSingularStringLiteralText
-			$add_text  = esc_html_x( $add_text, 'General price suffix text', 'woo-price-per-unit' );
+			$add_text  = esc_html( $add_text );
 			$separator = get_option( '_mcmp_ppu_recalc_text_separate' ) == 'no' ? '' : ' ';
 			$add_text  = '<span class="woocommerce-Price-currencySymbol amount mcmp-general-price-suffix">' . $separator . $add_text . '</span>';
 		} else {
@@ -932,8 +929,7 @@ class MCMP_PPU {
 						// The _mcmp_ppu_var_prefix_text needs to be displayed even for the replaced price text.
 						$var_prefix_text = get_option( '_mcmp_ppu_var_prefix_text' );
 						if ( ! empty( $var_prefix_text ) ) {
-							// phpcs:ignore WordPress.WP.I18n.NonSingularStringLiteralText
-							$var_prefix_text = esc_html_x( $var_prefix_text, 'Variations - variable price prefix', 'woo-price-per-unit' );
+							$var_prefix_text = esc_html( $var_prefix_text );
 							$var_prefix_text = '<span class="woocommerce-Price-currencySymbol amount mcmp-variable-price-prefix">' . $var_prefix_text . ' </span>';
 						} else {
 							$var_prefix_text = '';

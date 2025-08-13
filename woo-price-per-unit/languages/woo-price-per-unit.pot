@@ -1,10 +1,10 @@
-# Copyright (C) 2017 WooCommerce Price Per Unit
-# This file is distributed under the same license as the WooCommerce Price Per Unit package.
+# Copyright (C) 2017 Price Per Unit for WooCommerce
+# This file is distributed under the same license as the Price Per Unit for WooCommerce package.
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: WooCommerce Price Per Unit - free version 2.2.4\n"
-"POT-Creation-Date: 2024-05-21 16:05+0200\n"
+"Project-Id-Version: Price Per Unit for WooCommerce - free version 2.2.6\n"
+"POT-Creation-Date: 2025-07-13 23:24+0200\n"
 "PO-Revision-Date: 2017-04-06 16:00-0500\n"
 "Last-Translator: Martin Mechura\n"
 "Language-Team: MechComp\n"
@@ -12,7 +12,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 3.4.4\n"
+"X-Generator: Poedit 3.6\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: __;_e;_x:1,2c;_ex:1,2c;_n:1,2;_nx:1,2,4c;esc_attr__;esc_html__;esc_html_e;esc_html_x:1,2c;_nx_noop:1,2,3c\n"
 "X-Poedit-Basepath: ..\n"
@@ -24,7 +24,7 @@ msgstr ""
 "X-Poedit-SearchPathExcluded-4: -interesting\n"
 
 #: includes/database-upgrade.php:38
-msgid "WooCommerce Price per Unit - database needs an update. Please back up your database first!"
+msgid "Price Per Unit for WooCommerce - database needs an update. Please back up your database first!"
 msgstr ""
 
 #: includes/database-upgrade.php:39
@@ -32,7 +32,7 @@ msgid "Upgrade database"
 msgstr ""
 
 #: includes/database-upgrade.php:42
-msgid "WooCommerce Price per Unit - database updated successfully."
+msgid "Price Per Unit for WooCommerce - database updated successfully."
 msgstr ""
 
 #: includes/general-settings.php:22

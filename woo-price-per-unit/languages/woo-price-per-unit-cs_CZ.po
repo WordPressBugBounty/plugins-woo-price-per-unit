@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: WooCommerce Price Per Unit - free version\n"
+"Project-Id-Version: Price Per Unit for WooCommerce - free version\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-21 16:05+0200\n"
-"PO-Revision-Date: 2024-05-21 16:08+0200\n"
+"POT-Creation-Date: 2025-07-13 23:24+0200\n"
+"PO-Revision-Date: 2025-07-13 23:38+0200\n"
 "Last-Translator: Martin Měchura\n"
 "Language-Team: Czech\n"
 "Language: cs_CZ\n"
@@ -11,7 +11,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=( n == 1 ) ? 0 : ( n >= 2 && n <= 4 ) ? 1 : 2;\n"
-"X-Generator: Poedit 3.4.4\n"
+"X-Generator: Poedit 3.6\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: __;_x;_e;_ex;_n\n"
 "X-Poedit-Basepath: ..\n"
@@ -20,16 +20,16 @@ msgstr ""
 "X-Poedit-SearchPathExcluded-1: .vscode\n"
 
 #: includes/database-upgrade.php:38
-msgid "WooCommerce Price per Unit - database needs an update. Please back up your database first!"
-msgstr "WooCommerce Price per Unit - database vyžaduje aktualizaci. Nejprve si vytvořte zálohu databáze !"
+msgid "Price Per Unit for WooCommerce - database needs an update. Please back up your database first!"
+msgstr "Price Per Unit for WooCommerce - databáze vyžaduje aktualizaci. Nejprve si vytvořte zálohu databáze !"
 
 #: includes/database-upgrade.php:39
 msgid "Upgrade database"
 msgstr "Aktualizovat databázi"
 
 #: includes/database-upgrade.php:42
-msgid "WooCommerce Price per Unit - database updated successfully."
-msgstr "WooCommerce Price per Unit - databáze úspěšně aktualizována."
+msgid "Price Per Unit for WooCommerce - database updated successfully."
+msgstr "Price Per Unit for WooCommerce - databáze úspěšně aktualizována."
 
 #: includes/general-settings.php:22
 msgid "No additional text"

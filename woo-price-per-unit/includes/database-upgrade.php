@@ -5,6 +5,9 @@
  * @package PricePerUnit/Admin
  */
 
+if ( ! defined( 'ABSPATH' ) ) :
+	exit; // Exit if accessed directly.
+endif;
 $used_db_version  = get_option( '_mcmp_ppu_free_db_version', '1.0.0' );
 $require_approval = false;
 // phpcs:ignore WordPress.Security.NonceVerification.Recommended
@@ -35,11 +38,11 @@ if ( version_compare( $used_db_version, '2.0.8', '<' ) ) {
 // Approval required - create a message with link to approve on it.
 if ( true == $require_approval ) {
 	if ( false == $update_approved ) {
-		$message = esc_html__( 'WooCommerce Price per Unit - database needs an update. Please back up your database first!', 'woo-price-per-unit' ) .
+		$message = esc_html__( 'Price Per Unit for WooCommerce - database needs an update. Please back up your database first!', 'woo-price-per-unit' ) .
 			'<p><a href="' . esc_url( admin_url( 'admin.php?page=wc-settings&tab=products&section=mcmp_price_pu&mcmp-ppu-free-upgrade-db' ) ) . '">' . esc_html__( 'Upgrade database', 'woo-price-per-unit' ) . '</a></p>';
 		$this->mcmp_add_message( $message, 'warning', 'ppu-free-notice' );
 	} else {
-		$message = esc_html__( 'WooCommerce Price per Unit - database updated successfully.', 'woo-price-per-unit' );
+		$message = esc_html__( 'Price Per Unit for WooCommerce - database updated successfully.', 'woo-price-per-unit' );
 		$this->mcmp_add_message( $message, 'success', 'ppu-free-notice' );
 	}
 }
